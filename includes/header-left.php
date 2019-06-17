@@ -3,13 +3,13 @@
        <!-- logo -->
           <div class="logo anim-300 d-flex align-items-center">
             <a href="<?php echo home_url(); ?>">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="Endodontie Bordeaux Docteur Mattghieu Marret chirugien dentiste" class="anim-300 logo-img">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="Endodontie Bordeaux Docteur Mattghieu Marret chirugien dentiste" class="anim-300 logo-img">
             </a>
           </div>
         <!-- /logo -->
     </div>
     <div class="col-xl-9 col-lg-9 col-9 anim-300 large-menu pr-15 text-right anim-300">
-      <nav class="d-flex">
+      <nav class="d-flex justify-content-end">
          <?php  customTheme_nav(); ?>
          <div id="menu-btn">
             <button>

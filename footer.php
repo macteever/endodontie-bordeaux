@@ -15,7 +15,7 @@
 						<p class="text-darkgrey fs-14 montserrat fw-300 ls-1 mb-0">
 							<a href="/mentions-legales" class="text-darkgrey mr-10"><b> Mentions légales</b></a>|<span class="ml-10 mr-10"><?php echo date('Y'); ?></span>
 						</p>
-						 <img class="logo-footer mr-15 hidden-xs" src="<?php echo get_template_directory_uri(); ?>/assets/img/webmaster-bordeaux-nicolas-metivier-backlink-dark.svg" alt="Webmaster création de site internet Bordeaux Poitiers Nicolas Métivier">
+ 							
 					</div>
 				</div>
 			</footer>

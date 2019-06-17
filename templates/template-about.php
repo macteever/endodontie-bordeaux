@@ -21,7 +21,7 @@
                             <?php the_sub_field('content'); ?>
                          </div>
                          <div class="about-link">
-                            <a class="btn-purple" href="<?php the_sub_field('lien'); ?>">Rencontrons-nous</a>
+                            <a class="btn-blue" href="<?php the_sub_field('lien'); ?>">Rencontrons-nous</a>
                          </div>
                        </div>
                   <?php

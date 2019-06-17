@@ -14,7 +14,7 @@
                            <?php the_sub_field('headline'); ?>
                         </div>
                         <div class="ml-30 anim-700">
-                           <a class="btn-purple text-white" href="<?php the_sub_field('lien'); ?>">Me contacter</a>
+                           <a class="btn-blue text-white" href="<?php the_sub_field('lien'); ?>">Me contacter</a>
                         </div>
                      </div>
                    </div>

@@ -39,8 +39,7 @@ html {
 	font-size:62.5%;
 }
 body {
-	font-size: 14px;
-	color:#444;
+	color:#333333;
 	font-family: 'Montserrat', sans-serif;
 
 }
@@ -79,9 +78,7 @@ a {
 a:hover{
 	color: #444;
 }
-.home-part-cta:hover, .btn-purple:hover, .btn-grey:hover, .btn-gold:hover{
-	color: #FFF!important;
-}
+
 a:focus {
 	outline:0;
 }
@@ -164,49 +161,23 @@ strong{
 .uppercase{text-transform: uppercase!important;}
 .lowercase{text-transform: lowercase!important;}
 .italic{font-style: italic!important;}
-.btn-grey{
-	font-size: 16px;
-	color: white;
-	background-color: #3D3D3D;
-	padding: 12px 26px;
-}
-.btn-gold{
-	background-color: #D0B88B;
-	padding: 12px 26px;
-	font-size: 16px;
-	color: white;
-}
-.btn-purple{
-	background-color: #6F618D;
-	padding: 12px 26px;
-	font-size: 16px;
-	color: white;
-}
-.btn-border-purple{
-	padding: 12px 26px;
 
-   font-size: 16px;
-   color: #444;
-   border: solid 1px #6F618D;
-}
-.btn-border-purple:hover{
-	background-color: #6F618D;
-	padding: 12px 26px;
-
-   font-size: 16px;
-   color: #FFF;
-   border: solid 1px #6F618D;
+.btn-blue{
+	background: #2C2D71;
+	border-radius: 10px;
+	color: #FFFFFF;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+	padding: 12px 50px;
 }
 
 .text-white{color: #FFF;}
-.text-cream{color: #EFEFEF;}
-.text-black{color: #444;}
-.text-purple{color: #6F618D;}
 .text-grey{color: #757575;}
 .text-darkgrey{color: #3D3D3D;}
-.text-darkpurple{color: #413558;}
-.text-gold{color: #D0B88B;}
-.text-light-grey{color: #D6D6D6!important;}
+.text-blue{color: #2C2D71;}
+
 
 .white-bkg{background-color: #FFFFFF;}
 .dark-grey-bkg{background-color: #313131!important;}
@@ -504,11 +475,6 @@ button.menu-open span {
 .logo {
 	float: left;
 }
-.logo-img {
-	width: 45px;
-  height: auto;
-  margin-top: 0px;
-}
 .logo-tagline p:nth-child(2n){
 	margin-top: -5px;
 }
@@ -537,9 +503,7 @@ margin-left: auto;
 	font-size: 13px;
 	font-weight: 600;
 }
-main{
-	min-height: calc(100vh - 70px);
-}
+
 .main-navigation-zone  ul li{
 	list-style: none;
 	padding: 5px 15px 5px 15px;
@@ -588,10 +552,54 @@ main{
 #text-3{
 	margin-left: auto;
 }
+
 /*------------------------------------*\
     PAGES
 \*------------------------------------*/
 
+/* HOME */
+#home-top > div:first-of-type{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+.top-filter{
+	width: 60%;
+  position: absolute;
+  height: 100vh;
+  left: 0;
+  background: rgba(255,255,255,0.55);
+}
+#home-top h1{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#home-present{
+	min-height: 100vh;
+	background-color: #F4F4F4;
+	display: flex;
+	align-items: center;
+}
+.home-present-content{
+	padding-left: 30px;
+  border-left: solid 1px;
+}
+.home-present-filter{
+	width: 40%;
+  position: absolute;
+  height: 100vh;
+  right: 0;
+  background: #E8E8E8;
+}
+#home-services{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+.home-service-content{
+	background: #FBFBFB;
+	box-shadow: 0 2px 20px 0 rgba(224,224,224,0.50);
+}
 /* FOOTER */
 footer{
 	padding: 10px 0px;
@@ -653,14 +661,10 @@ font-family: 'Montserrat', sans-serif;
     RESPONSIVE
 \*------------------------------------*/
 @media only screen and (min-width:1440px) {
-	.content-title h2, .content-title h1{
-		font-size: 4.5vw;
-	}
+
 }
 @media only screen and (min-width:1920px) {
-	.content-title h2, .content-title h1{
-		font-size: 4vw;
-	}
+
 }
 @media only screen and (max-width:1440px) {
 
