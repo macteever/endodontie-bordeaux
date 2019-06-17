@@ -1,4 +1,4 @@
-<?php /* Template Name: Rédaction */ get_header(); ?>
+<?php /* Template Name: Endodontie */ get_header(); ?>
 <main role="main" class="main-content">
    <?php
       if( have_rows('top_page') ):

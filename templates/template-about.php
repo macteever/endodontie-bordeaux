@@ -1,4 +1,4 @@
-<?php /* Template Name: About */ get_header(); ?>
+<?php /* Template Name: Cabinet */ get_header(); ?>
 	<main role="main" class="main-content">
       <div class="container-fluid light-grey-bkg about-container1">
       </div>

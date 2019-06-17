@@ -1,4 +1,4 @@
-<?php /* Template Name: Home-parallax */
+<?php /* Template Name: Home */
    get_header(); ?>
    <main role="main" class="main-content">
       <div id="fullpage">
