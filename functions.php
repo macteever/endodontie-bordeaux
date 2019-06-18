@@ -480,7 +480,7 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 function create_post_type_html5()
 {
     // register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('taxonomy-Soins', 'Soins');
+    register_taxonomy_for_object_type('taxonomy-soins', 'Soins');
     register_post_type('Soins', // Register Custom Post Type
         array(
         'labels' => array(
@@ -513,7 +513,7 @@ function create_post_type_html5()
     )
   );
   register_taxonomy(
-      'taxonomy-Soins',
+      'taxonomy-soins',
       'Soins',
       array(
           'label'  => __('Custom Taxonomy', 'endodontie-bordeaux'),

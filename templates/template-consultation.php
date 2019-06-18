@@ -1,105 +1,98 @@
 <?php /* Template Name: Consultation */ get_header(); ?>
 <main role="main" class="main-content">
-   <?php
-    if( have_rows('logo_top_page') ):
-      while ( have_rows('logo_top_page') ) : the_row();
+  <section id="consult-top">
+    <?php
+    if( have_rows('consult_top') ):
+      while ( have_rows('consult_top') ) : the_row();
       ?>
-      <div class="container-fluid logo-top-page" style="background: url(<?php the_sub_field('background'); ?>); background-size: cover; background-position: bottom;">
-         <div class="container h-100">
-            <div class="row h-100 align-items-center">
-               <div class="col-xl-10 col-lg-10 col-md-10 col-12 mx-auto pl-0 pb-30 page-intro">
-                  <div class="page-intro-anim anim-700">
-                    <h1 class="montserrat fs-72 fw-700 mt-0"><?php the_sub_field('title'); ?></h1>
-                    <div class="montserrat fs-18 lh-24 mb-30">
-                       <?php the_sub_field('headline'); ?>
-                    </div>
-                    <div class="ml-30">
-                       <a class="btn-grey" href="<?php echo get_site_url(); ?>/taxonomy-projets/creation-de-logo/">Voir les projets</a>
-                    </div>
-                  </div>
-               </div>
+        <div class="container-fluid" style="background: url(<?php the_sub_field('bkg_part') ?>); background-size: cover; background-repeat: no-repeat;">
+        <div class="endo-filter mw-60"></div>
+          <div class="container">
+            <div class="row align-items-center mw-100">
+              <div class="col-xl-9 col-lg-9 col-md-9 col-12 d-flex flex-column ml-auto">
+                <div class="content-subtitle fs-22 text-right">
+                  <?php the_sub_field('subtitle'); ?>
+                </div>
+                <div class="content-title montserrat fs-80 text-blue mb-15 fw-700 text-right">
+                  <?php the_sub_field('title'); ?>
+                </div>
+                <div class="home-excerpt fs-17 lh-28 mt-15 mb-15 mw-50 ml-auto text-right">
+                  <?php the_sub_field('excerpt'); ?>
+                </div>
+              </div>
             </div>
-         </div>
+          </div>
+          <div class="box-parent d-flex flex-column align-items-center">
+            <p class="fs-12 text-center ls-2 mb-10">SCROLL</p>
+            <div class="box">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+    <?php
+    endwhile;
+    else :
+    endif;
+    ?>
+  </section>
+  <section id="consult-endo" class="container-fluid">
+    <div class="container">
+      <div class="row mb-50">
+        <div class="col-12 fs-52 text-blue mb-30">
+          <?php the_field('consult_title'); ?>
+        </div>
       </div>
       <?php
-      endwhile;
-      else :
-      endif;
+      if( have_rows('consult_endo') ):
+      while ( have_rows('consult_endo') ) : the_row();
       ?>
-      <div class="container-fluid">
-         <div class="container">
-         <?php
-         if( have_rows('logo_content') ):
-            while ( have_rows('logo_content') ) : the_row();
-            ?>
-            <div class="row mt-150 pb-200 logo-content align-items-end justify-content-around">
-               <div class="col-xl-5 col-lg-5 col-md-12 col-12 zi-99">
-                  <div class="montserrat fs-66 fw-700 ls-1 mb-30"><?php the_sub_field('subtitle'); ?></div>
-                  <div class="montserrat fs-17 lh-24 mt-20 ">
-                     <?php the_sub_field('content'); ?>
-                  </div>
-               </div>
-               <div class="col-xl-5 col-lg-5 col-md-12 col-12 zi-9 logo-content-img">
-                  <?php
-                     $image = get_sub_field('img');
+       <div class="row align-items-top justify-content-between">
+         <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+           <div class="consult-endo-content">
+             <div class="fs-22 fw-600 lh-32 mb-30">
+               <?php the_sub_field('subtitle'); ?>
+             </div>
+             <div class="fs-17 lh-26 mw-80">
+               <?php the_sub_field('content'); ?>
+             </div>
+             <div class="mt-30">
+               <?php
+                $link = get_sub_field('link');
+                if( $link ):
+                  $link_url = $link['url'];
+                  $link_title = $link['title'];
                   ?>
-                  <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['title']; ?>" />
-               </div>
-            </div>
-            <?php
-            endwhile;
-            else :
-            endif;
-            ?>
-         </div>
-      </div>
-      <div class="container-fluid logo-projets pt-100 pb-100">
-         <div class="container mb-150">
-           <div class="row justify-content-center mb-50">
-             <h2 class="montserrat fs-44 text-darkpurple">Derniers projets</h2>
-           </div>
-           <div class="row justify-content-center">
-              <div class="col-xl-8 col-lg-8 col-12 text-center">
-              <?php
-              $myposts = get_posts(array(
-                  'showposts' => 4,
-                  'post_type' => 'projets',
-                  'orderby'  => 'rand',
-                  'order'     => 'ASC',
-                  'tax_query' => array(
-                    array(
-                    'taxonomy' => 'taxonomy-projets',
-                    'field' => 'slug',
-                    'terms' => array('creation-de-logo'))
-                   ))
-                 );
-                  foreach ( $myposts as $post ) : setup_postdata( $post );
-                 ?>
-                 <div class="col-xl-6 col-lg-6 col-md-6 col-12 pl-0 pr-0 float-left projet-thumbnail">
-                   <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                     <div class="web-tmplt-project anim-300 p-relative">
-                       <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>" alt="Création de logo webmaster freelance Bordeaux Poitiers Nicolas Métivier">
-                       <div class="hover-web-tmplt-project text-white anim-300">
-                         <span class="text-right fs-15 montserrat"><?php the_time('Y'); ?></span>
-                         <h3 class="montserrat fw-600 fs-28 text-left"><?php the_title(); ?></h3>
-                       </div>
-                     </div>
-                   </a>
-                 </div>
-                 <?php
-                 endforeach;
-                 ?>
-                 <?php wp_reset_postdata();
-                 ?>
-              </div>
-           </div>
-           <div class="row justify-content-center mt-20">
-             <div class="col-xl-8 col-12 text-right link-category-projets">
-               <a class="mt-30 fs-18 montserrat fw-700 text-darkpurple" href="<?php echo get_site_url(); ?>/taxonomy-projets/creation-de-logo/">Voir tout les projets</a>
+                  <a class="fw-700 text-blue fs-18" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
+                <?php endif; ?>
              </div>
            </div>
          </div>
-      </div>
+         <div class="col-xl-6 col-lg-6 col-md-12 col-12 p-relative text-right">
+           <?php
+           if( have_rows('consult_endo_img') ):
+             while ( have_rows('consult_endo_img') ) : the_row();
+             ?>
+             <?php
+               $image = get_sub_field('image');
+               if( !empty($image) ): ?>
+                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" description="<?php echo $image['description']; ?>"/>
+               <?php endif;
+             ?>
+             <?php
+             endwhile;
+           else :
+           endif;
+           ?>
+         </div>
+       </div>
+     <?php
+     endwhile;
+     else :
+     endif;
+     ?>
+    </div>
+  </section>
 </main>
 <!-- /container-fluid -->
 <?php get_footer(); ?>

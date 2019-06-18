@@ -5,7 +5,7 @@
     if( have_rows('endo_top') ):
       while ( have_rows('endo_top') ) : the_row();
       ?>
-        <div class="container-fluid" style="background: url(<?php the_sub_field('bkg_part') ?>); background-size: contain; background-repeat: no-repeat;">
+        <div class="container-fluid" style="background: url(<?php the_sub_field('bkg_part') ?>); background-size: cover; background-repeat: no-repeat;">
         <div class="endo-filter mw-60"></div>
           <div class="container">
             <div class="row align-items-center mw-100">
