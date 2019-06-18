@@ -565,20 +565,81 @@ margin-left: auto;
 	box-shadow: 0 2px 20px 0 rgba(224,224,224,0.50);
 }
 /* PAGE ENDODONTIE */
+#endo-top > div:first-of-type{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+.endo-filter{
+	width: 60%;
+  position: absolute;
+  height: 100vh;
+  right: 0;
+  background: rgba(255,255,255,1);
+}
+#endo-top h1{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#endo-about{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	background-color: #FAFAFA;
+}
+.endo-about-content:nth-child(odd){
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.5;
+}
+.endo-about-content:nth-child(even){
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 1.5;
+	margin-top: 50px;
+	max-width: 80%;
+}
+#endo-consult{
+	display: flex;
+	min-height: 100vh;
+	align-items: center;
+	background-image: linear-gradient(115deg, #2D2E6F 15%, #292A58 86%);
+}
+.enbdo-consult-content{
+	padding-left: 30px;
+	border-left: solid 1px rgba(255,255,255,0.6);
+}
+#endo-consult img:nth-child(even){
+	position: absolute;
+	top: -50px;
+	right: -50px;
+}
+#endo-traitement{
+	display: flex;
+	min-height: 100vh;
+	align-items: center;
+}
+#endo-traitement h3{
+	font-size: 24px;
+	color: #2C2D71;
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+#endo-traitement ul{
+	line-height: 2;
+}
+#endo-traitement ul li{
+	font-size: 20px;
+}
 /* FOOTER */
 footer{
 	background-color: #292A58;
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
-
 /*********** SINGLE SOINS **********/
 
 /************ ARCHIVE SOINS **********/
-
-/** ARCHIVE ACTUALITES **/
-
-/** SINGLE ACTUALITES **/
 
 /*********** PAGE 404 *************/
 
