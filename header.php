@@ -17,7 +17,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php wp_head(); ?>
-
 		<script>
         // conditionizr.com
         // configure environment tests
@@ -28,17 +27,14 @@
     </script>
 	</head>
 	<body <?php body_class(); ?>>
-		<!-- <div class="page-loader">
-			<img class="m-l-auto m-r-auto" src="<?=get_template_directory_uri().'/assets/img/logo-neutreB.svg'?>" alt="Endodontie Bordeaux Docteur Mattghieu Marret chirugien dentiste"/>
-		</div> -->
 		<!-- wrapper -->
 		<div class="wrapper">
 			<!-- header -->
 			<header class="header anim-300 clear" role="banner">
 				<!-- nav -->
 				<div class="container-fluid menu-container anim-300">
-                 <?php require 'includes/header-left.php'; ?>
-            </div>
+           <?php require 'includes/header-left.php'; ?>
+        </div>
 				<!-- /nav -->
 			</header>
 			<!-- /header -->

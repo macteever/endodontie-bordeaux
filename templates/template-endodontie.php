@@ -37,6 +37,11 @@
                      <?php
                         $image = get_sub_field('img');
                      ?>
+                     <?php
+                     echo '<pre>';
+                    	var_dump( $image );
+                     echo '</pre>';
+                     ?>
                      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['title']; ?>" />
                   </div>
                   <div class="col-xl-6 col-lg-6 col-md-12 col-12 zi-99 pl-30">

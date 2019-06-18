@@ -5,30 +5,15 @@
 
    // RESIZE HEADER SCROLLTOP
 
-    // $(window).scroll(function(){
-    //   var $header = $('.header');
-		// 	var $menu_section = $('.large-menu, .container-logo-menu');
-		// 	var $menu_cta = $('.menu-cta');
-    //   if ($(this).scrollTop() > 80){
-		// 		$menu_section.css({"-webkit-transform":"translateY(-80px)"});
-		// 		$menu_cta.css({"-webkit-transform":"translateY(-125px)"});
-    //   }
-    //   else{
-		// 		$menu_section.css({"-webkit-transform":"translateY(0px)"});
-		// 		$menu_cta.css({"-webkit-transform":"translateY(80px)"});
-    //   }
-    // });
-		// $(window).scroll(function(){
-		// 	var $win = $(window);
-		// 	var $winH = $win.height();
-		// 	var $entretienShdw = $('.img-entretien-shadow');
-    //   if ($(this).scrollTop() > $winH ){
-		// 		$entretienShdw.css({"-webkit-transform":"translate(-12px, 12px)"});
-    //   }
-    //   else{
-		// 		$entretienShdw.css({"-webkit-transform":"translate(0px)"});
-    //   }
-    // });
+	 $(window).on( "scroll", function() {
+		 if ( $(window).scrollTop() > 80) {
+			 $('body').addClass("fixed");
+			 $('.logo-img').addClass('resize-logo');
+		 }else{
+			 $('body').removeClass("fixed");
+			 $('.logo-img').removeClass('resize-logo');
+		 }
+	 });
 
 
 

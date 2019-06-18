@@ -380,7 +380,18 @@ strong{
 	z-index: 99999;
 	position: fixed;
 	top: 0px;
-	height: 80px;
+	/* height: 80px; */
+}
+body.fixed .menu-container{
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 5px 0px;
+}
+/* body.fixed .logo img{
+	height: 60px;
+} */
+.resize-logo{
+	width: 150px;
+  height: auto;
 }
 /* burger menu */
 #menu-btn:hover{
@@ -472,22 +483,7 @@ button.menu-open span {
   button.menu-open span:nth-child(3) {
     transform: rotate(-45deg); }
 /* logo */
-.logo {
-	float: left;
-}
-.logo-tagline p:nth-child(2n){
-	margin-top: -5px;
-}
-.logo-tagline::before{
-	content: '';
-	display: block;
-	height: 25px;
-	width: 1px;
-	background-color: #3D3D3D;
-	margin-right: 10px;
-	margin-left: 15px;
-	margin-top: -5px;
-}
+
 /* nav */
 .nav {
 margin-left: auto;
@@ -495,6 +491,7 @@ margin-left: auto;
 .large-menu nav ul{
 	display: flex;
 	margin-left: auto;
+	margin-bottom: 0px;
 }
 .large-menu nav ul li{
 	list-style-type: none;
@@ -516,41 +513,6 @@ margin-left: auto;
 	/* opacity: 1;
 	display: inline-block; */
 	display: none;
-}
-.menu-section{
-	height: 80px;
-}
-.resize-logo{
-	width: 60px;
-  height: auto;
-  margin-top: 40px;
-}
-.resize-menu{
-	background: rgba(255,255,255,0.65);
-	border-bottom: solid 1px #eaeaea;
-}
-/* sidebar */
-.page-loader{
-	width:100vw;
-	height:100vh;
-	background:#313131;
-	position:fixed;
-	z-index:999999999999;
-
-}
-.page-loader img{
-    width: 100px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40vh;
-	 opacity: 0.25;
-}
-#text-2{
-	max-width: 70%;
-}
-#text-3{
-	margin-left: auto;
 }
 
 /*------------------------------------*\
@@ -595,41 +557,21 @@ margin-left: auto;
 	min-height: 100vh;
 	display: flex;
 	align-items: center;
+	padding-top: 15vh;
+	padding-bottom: 15vh;
 }
 .home-service-content{
 	background: #FBFBFB;
 	box-shadow: 0 2px 20px 0 rgba(224,224,224,0.50);
 }
+/* PAGE ENDODONTIE */
 /* FOOTER */
 footer{
-	padding: 10px 0px;
+	background-color: #292A58;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
-.page-template-template-video footer, .page-template-template-contact footer{
-	background-color: #313131!important;
-	border-top: solid 1px;
-}
-.page-template-template-video footer p, .page-template-template-video footer a, .page-template-template-video footer a .fa, .page-template-template-contact footer p, .page-template-template-contact footer a, .page-template-template-contact footer a .fa{
-	color: #FFFFFF!important;
-}
-.logo-footer{
-	width: 150px;
-}
-.page-template-template-video .logo-footer, .page-template-template-contact .logo-footer{
-	display: none;
-}
-.menu-cta{
-	position: fixed;
-	right: 35px;
-	bottom: -80px;
-	z-index: 999;
-	cursor: pointer;
-}
-.page-template-template-video .menu-cta, .page-template-template-contact .menu-cta{
-	display: none;
-}
-.callBackMenu{
-	transform: translateY(0px)!important;
-}
+
 /*********** SINGLE SOINS **********/
 
 /************ ARCHIVE SOINS **********/
@@ -848,4 +790,47 @@ a img.aligncenter {
 }
 /*----------------- ANIMATION ------------------*/
 
-/* Page Transtion animation delay classes */
+/* scroll animation*/
+.box-parent{
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.box span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-bottom: 1px solid #333333;
+  border-right: 1px solid #333333;
+  transform: rotate(45deg);
+  animation: animate 2s infinite;
+  margin: -10px;
+}
+
+  .box span:nth-child(2)
+  {
+    animation-delay: -0.2s;
+
+  }
+   .box span:nth-child(3) {
+    animation-delay: -0.4s;
+     transform: rotate(45deg) translate(-20px, -20px)
+  }
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px)
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
+}

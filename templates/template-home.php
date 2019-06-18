@@ -33,6 +33,13 @@
                  </div>
                </div>
              </div>
+             <div class="box-parent d-flex flex-column align-items-center">
+               <p class="fs-12 text-center ls-2 mb-10">SCROLL</p>
+               <div class="box">
+                 <span></span>
+                 <span></span>
+               </div>
+             </div>
            </div>
        <?php
        endwhile;
@@ -75,7 +82,7 @@
             <?php
             $image = get_sub_field('image');
             if( !empty($image) ): ?>
-            	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+            	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" description="<?php echo $image['description']; ?>"/>
             <?php endif;
             ?>
           </div>
