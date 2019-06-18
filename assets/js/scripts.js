@@ -59,6 +59,20 @@
 		// START RESIZE
       $(window).on("load resize", function () {
 
+			/* SLICK SLIDER CABINET */
+
+			$('.cabinet-slider').slick({
+			  infinite: true,
+				arrows: false,
+			  slidesToShow: 2,
+			  slidesToScroll: 1
+			});
+			$('.cabinet-prev').click(function(){
+	      $('.cabinet-slider').slick('slickPrev');
+	    });
+
+
+
 			/* ARCHIVE PARALLAX */
 
 			//when the window is scrolling, do stuff
