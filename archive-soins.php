@@ -1,46 +1,73 @@
 <?php get_header(); ?>
 <main role="main" class="main-content">
-        <div class="container-fluid tmplt-projets">
-            <div class="container pt-150 pb-50 block-parallax">
-					<div class="row tmplt-projets-title mb-15">
-						<h1 class="montserrat fs-72 fw-700 ml-15">Les Projets</h1>
-					</div>
-               <div class="row tmplt-projets-category mb-30 pt-20">
-                  <?php
-                  $taxonomy = 'taxonomy-projets';
-                  $terms = get_terms($taxonomy);
-
-                  if ( $terms && !is_wp_error( $terms ) ) :
-                  ?>
-                      <ul class="d-flex w-100 montserrat uppercase fs-14 fw-300 pl-15">
-                          <?php foreach ( $terms as $term ) { ?>
-                              <li class="ls-2"><a href="<?php echo get_term_link($term->slug, $taxonomy); ?>"><?php echo $term->name; ?></a></li>
-                          <?php } ?>
-                          <li class="ls-2 ml-auto"><a href="/projets"><b>voir tout</b></a></li>
-                      </ul>
-                  <?php endif;?>
-               </div>
-					<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-					<div class="row row-templt-projets mt-15 mb-15 archive-parallax anim-300">
-						<div class="col-xl-6 col-lg-6 col-md-12 col-12 archive-parallax-child">
-							<span class="tmplt-projets-date fs-15"><?php the_time('Y'); ?></span>
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-								<img class="anim-300 tmplt-projet-thumbnail mb-30" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>');" alt="Création site internet Webmaster Freelance Bordeaux Poitiers Nicolas Métivier"/>
-							</a>
-							<div class="montserrat fs-16 category ml-auto">
-								<?php $term_list = wp_get_post_terms($post->ID, 'taxonomy-projets', array("fields" => "all"));
-								foreach($term_list as $term_single) {?>
-								<span class="fs-15"><?php echo $term_single->name; ?></span>
-								<?php } ?>
-							</div>
-							<h3 class="fs-36 montserrat fw-700"><?php the_title(); ?></h3>
-						</div>
-
-					</div>
-						<?php endwhile; ?>
-					<?php endif; ?>
-            </div>
+  <?php if ( have_posts() ) : ?>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row soins-title pt-150">
+        <div class="col-12 text-center">
+          <span class="fs-20">Dr. Matthieu Marret</span>
+          <h1 class="fs-80 text-blue fw-700 mt-0 mb-50">Les soins</h1>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid bkg-grey">
+    <div class="container">
+      <div class="row justify-content-center pt-80 pb-80">
+        <div class="col-xl-6 col-lg-6 col-12 text-center">
+          <h2 class="fs-36 text-blue"><?php the_field('archive_subtitle', 'option'); ?></h2>
+          <div class="fs-18 lh-28 mt-30">
+            <?php the_field('archive_content', 'option'); ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="archive-soins" class="container-fluid">
+    <div class="container">
+      <div class="row justify-content-center pt-50 mw-80 mx-auto">
+        <?php
+        while ( have_posts() ) :
+          the_post();
+          ?>
+          <div class="col-xl-6 col-lg-6 col-12 p-2 anim-300 anim-300">
+            <a href="<?php echo esc_url( get_permalink()); ?>">
+              <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <?php echo get_the_post_thumbnail(); ?>
+                <div class="info-cta">
+                  <i class="text-blue material-icons">info</i>
+                </div>
+                <div class="soin-hover-thumbnail anim-300">
+                  <h2 class="fs-30 fw-700 text-blue"><?php the_title(); ?></h2>
+                  <a class="fs-20 fw-600 text-blue" href="<?php echo esc_url( get_permalink()); ?>">En savoir plus</a>
+                </div>
+              </article>
+            </a>
+          </div>
+
+          <?php
+          // End the loop.
+        endwhile;
+        else :
+          get_template_part( 'template-parts/content/content', 'none' );
+
+        endif;
+        ?>
+      </div>
+      <div class="row mt-80">
+        <div class="col-12 text-center">
+          <?php
+          $link = get_field('archive_rdv', 'option');
+          if( $link ):
+            $link_url = $link['url'];
+            $link_title = $link['title'];
+            ?>
+            <a class="btn-blue" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <?php get_footer(); ?>

@@ -719,6 +719,43 @@ footer{
 /*********** SINGLE SOINS **********/
 
 /************ ARCHIVE SOINS **********/
+.bkg-grey{
+	background-color: #FAFAFA;
+}
+#archive-soins{
+	min-height: 100vh;
+  padding: 10vh 0vh;
+}
+#archive-soins article.soins{
+	position: relative;
+}
+#archive-soins article.soins img{
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+}
+.info-cta{
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+}
+.soin-hover-thumbnail{
+	position: absolute;
+	background: rgba(255,255,255,0.69);
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	padding: 30px;
+	display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+	opacity: 0;
+}
+.soin-hover-thumbnail:hover{
+	opacity: 1;
+	box-shadow: 0 2px 24px 0 rgba(0,0,0,0.20);
+	cursor: pointer;
+}
 
 /*********** PAGE 404 *************/
 

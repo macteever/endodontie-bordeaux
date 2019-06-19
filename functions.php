@@ -44,6 +44,12 @@ if (function_exists('add_theme_support'))
 	Functions
 \*------------------------------------*/
 
+// ACF assert_options
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page();
+
+}
 
 // File extention upload allowed
 function cc_mime_types($mimes) {
