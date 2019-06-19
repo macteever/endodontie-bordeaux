@@ -716,7 +716,7 @@ footer{
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
-/*********** SINGLE SOINS **********/
+/*PAGE CONTACT*/
 
 /************ ARCHIVE SOINS **********/
 .bkg-grey{
@@ -756,7 +756,15 @@ footer{
 	box-shadow: 0 2px 24px 0 rgba(0,0,0,0.20);
 	cursor: pointer;
 }
-
+/*********** SINGLE SOINS **********/
+.single-soins article > div:first-of-type{
+	padding: 25vh 0 15vh 0;
+}
+.single-soins h3{
+	font-size: 26	px;
+	font-weight: 600;
+	margin: 40px 0px;
+}
 /*********** PAGE 404 *************/
 
 #page-404 section{

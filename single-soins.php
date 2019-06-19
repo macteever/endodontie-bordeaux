@@ -2,68 +2,81 @@
 	<main role="main">
 		<section>
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<div class="container pt-150">
-					<div class="row">
-						<div class="col-xl-10 col-lg-10 col-md-12 col-12 mx-auto">
-							<h1 class="montserrat fw-700 fs-60 ls-1 mb-20"><?php the_title(); ?></h1>
-							<div class="custom-post-details d-flex mb-20">
-								<span class="montserrat fs-17 date">le <?php the_time('j F Y'); ?> | </span>
-								<span class="montserrat fs-17 author ml-5"> <?php _e( ' par', 'html5blank' ); ?> <strong><?php the_author(); ?></strong></span>
-								<div class="montserrat fs-16 category ml-auto">
-									<!-- CATEGORY CUSTOM POST + LINK -->
-									Catégorie |
+				<div class="container-fluid" style="
+				background: -webkit-linear-gradient(180deg, rgba(255,255,255,0.15) 17%, #FFFFFF 100%);
+				background: -o-linear-gradient(180deg, rgba(255,255,255,0.15) 17%, #FFFFFF 100%);
+				background: linear-gradient(180deg, rgba(255,255,255,0.15) 17%, #FFFFFF 100%), url('<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>');
+				background-size: cover;	">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<?php
+								if ( function_exists('yoast_breadcrumb') ) {
+									yoast_breadcrumb( '<p class="fs-18 mb-0" id="breadcrumbs">','</p>' );
+								}
+								?>
+								<h1 class="fw-700 fs-72 mt-0 mb-0 text-blue"><?php the_title(); ?></h1>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid">
+					<div class="container">
+						<div class="row mb-50">
+							<div class="col-12 fs-42 fw-600">
+								<?php the_field('subtitle'); ?>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xl-8 col-lg-8 col-12 fs-17 lh-26 mw-80">
+								<div class="mw-80">
+									<?php the_field('content'); ?>
+								</div>
+								<div class="col-12 mt-30">
 									<?php
-									$terms = wp_get_post_terms( $post->ID, 'taxonomy-projets');
-									foreach ($terms as $term) {?>
-										<strong><a href="<?php echo get_term_link( $term->slug, 'taxonomy-projets'); ?>"><?php echo $term->name; ?></a>   </strong>
-									<?php	}	?>
+									$link = get_field('archive_rdv', 'option');
+									if( $link ):
+										$link_url = $link['url'];
+										$link_title = $link['title'];
+										?>
+										<a class="btn-blue" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
+									<?php endif; ?>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<?php // repetaur pour les créations des projets
-						if( have_rows('visuel_projet') ):
-						    while ( have_rows('visuel_projet') ) : the_row();
-						?>
-						<div class="col-xl-10 col-lg-10 col-md-12 col-12 mx-auto mt-30 mb-30 content-projet">
-							<?php
-                 $image = get_sub_field('visuel');
-              ?>
-							<a data-pin-do="buttonBookmark" data-pin-tall="true" data-pin-round="true" href="https://www.pinterest.com/pin/create/button/">
-								<img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_16.png" />
-							</a>
-							<img class="visuel-projet" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['title']; ?>"/>
-							<div class="legende-projet montserrat italic fs-15 mt-15">
-								<?php the_sub_field('legende'); ?>
+							<div class="col-xl-4 col-lg-4 col-12 d-flex flex-column">
+								<?php
+			          if( have_rows('galerie_img') ):
+			            while ( have_rows('galerie_img') ) : the_row();
+			            ?>
+			            <?php
+			              $image = get_sub_field('img');
+			              if( !empty($image) ): ?>
+			                <img class="mb-3" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" description="<?php echo $image['description']; ?>"/>
+			              <?php endif;
+			            ?>
+			            <?php
+			            endwhile;
+			          else :
+			          endif;
+			          ?>
 							</div>
 						</div>
-						<?php
-						    endwhile;
-						else :
-						endif;
-						?>
-					</div>
-					<div class="row posts-pagination mt-50	mb-30">
-						<div class="col-xl-10 col-lg-10 col-md-10 col-12 d-flex justify-content-between mx-auto">
-							<div class="nav-previous previus-post"><?php previous_post_link(); ?></div>
-							<div class="nav-next next-post"><?php next_post_link(); ?></div>
+
+						<div class="row">
+
+						</div>
+
+						<div class="row posts-pagination mt-50 mb-80">
+							<div class="col-xl-10 col-lg-10 col-md-10 col-12 d-flex justify-content-center mx-auto">
+								<div class="nav-previous previus-post fs-15"><?php previous_post_link(); ?></div>
+								<div class="nav-next next-post fs-15"><?php next_post_link(); ?></div>
+							</div>
 						</div>
 					</div>
-					<div class="row justify-content-center social-share mb-15">
-						<p class="fs-16 text-center">PARTAGEZ</p>
-					</div>
-					<div class="row justify-content-center mb-50">
-						<a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>" title="Share this post on Facebook!" onclick="window.open(this.href); return false;"><i class="fa fa-facebook-official fs-18 mr-30" aria-hidden="true"></i></a>
-						<a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>"><i class="fa fa-google-plus fs-18 ml-30" aria-hidden="true"></i></a>
-					</div>
-					<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 				</div>
 			</article>
-
 		<?php endwhile; ?>
 
 		<?php else: ?>
@@ -73,5 +86,4 @@
 		<?php endif; ?>
 		</section>
 	</main>
-<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 <?php get_footer(); ?>
