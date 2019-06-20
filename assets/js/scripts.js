@@ -15,6 +15,22 @@
 		 }
 	 });
 
+ 		// APPARITION
+			 var delay = 0;
+			 $('.apparition-2').each(function () {
+					 var $li = $(this);
+					 setTimeout(function () {
+							 $li.addClass('animation-fade-in');
+					 }, delay += 150);
+			 });
+
+			 var delay1 = 0;
+			 $('.apparition-3').each(function () {
+					 var $li = $(this);
+					 setTimeout(function () {
+							 $li.addClass('animation-fade-up');
+					 }, delay += 150);
+			 });
 
 
     // MENU BURGER
@@ -72,38 +88,6 @@
 	    });
 
 
-
-			/* ARCHIVE PARALLAX */
-
-			//when the window is scrolling, do stuff
-			// $(window).scroll(function() {
-			//   //capture the curren position of the window
-			//   var windowTop = $(window).scrollTop();
-			//   var imgElts = document.querySelectorAll('.archive-parallax:nth-child(2n+1), .index-parallax:nth-child(2n+1)');
-			//   var imgEltsPair = document.querySelectorAll('.archive-parallax:nth-child(2n), .index-parallax:nth-child(2n)');
-			// 	  for (var i = 0; i < imgElts.length; i++) {
-			// 		var transform = imgElts[i].offsetTop - windowTop;
-			// 	if (transform < 2000) {
-			// 			transform = transform / 10;
-			// 			console.log(transform);
-			// 		}else{
-			// 			transform = 0;
-			// 		}
-			// 	imgElts[i].style.transform = "translateY(" + transform + "px)";
-			//   }
-			//
-			//   for (var i = 0; i < imgEltsPair.length; i++) {
-			//    var transform = -imgEltsPair[i].offsetTop + windowTop;
-		  //  if (transform < 2000) {
-			// 		transform = transform / 10;
-			// 		console.log(transform);
-			//    }else{
-			// 		transform = 0;
-			//    }
-		  //  imgEltsPair[i].style.transform = "translateY(" + transform + "px)";
-		  // }
-			//
-		  // });
     }).resize();
 		// END RESIZE
 

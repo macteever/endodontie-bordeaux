@@ -24,6 +24,18 @@
 				</div>
 			</div>
 		</div>
+		<div class="row justify-content-center mt-80">
+			<div class="col-12 text-center">
+				<?php
+				 $link = get_field('link_urgence');
+				 if( $link ):
+					 $link_url = $link['url'];
+					 $link_title = $link['title'];
+					 ?>
+					 <a class="fw-700 uppercase text-blue fs-18 btn-blue-reverse" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
+				 <?php endif; ?>
+			</div>
+		</div>
 	</div>`
 	<div class="container-fluid mt-80">
 		<div class="row map">

@@ -66,7 +66,7 @@
                    $link_url = $link['url'];
                    $link_title = $link['title'];
                    ?>
-                   <a class="fs-20 text-blue fw-700" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
+                   <a class="fs-20 text-blue fw-700 after-link-blue" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
                  <?php endif; ?>
                </div>
             </div>
@@ -109,7 +109,7 @@
                 $link_url = $link['url'];
                 $link_title = $link['title'];
                 ?>
-                <a class="fw-700 fs-18 text-white" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
+                <a class="fw-700 fs-18 text-white after-link-white" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
               <?php endif; ?>
            </div>
          </div>
@@ -122,7 +122,7 @@
            <?php
              $image = get_sub_field('image');
              if( !empty($image) ): ?>
-               <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" description="<?php echo $image['description']; ?>"/>
+               <img class="apparition-2" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" description="<?php echo $image['description']; ?>"/>
              <?php endif;
            ?>
            <?php
@@ -152,7 +152,7 @@
           <div class="col-xl-5 col-lg-5 col-12 fs-17 lh-26">
             <?php the_sub_field('content'); ?>
           </div>
-          <div class="col-xl-5 col-lg-5 col-12">
+          <div class="col-xl-5 col-lg-5 col-12 tooth-before">
             <?php the_sub_field('content_list'); ?>
           </div>
         </div>

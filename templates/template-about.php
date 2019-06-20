@@ -61,7 +61,7 @@
 	                $link_url = $link['url'];
 	                $link_title = $link['title'];
 	                ?>
-	                <a class="fw-700 text-blue fs-18" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
+	                <a class="fw-700 text-blue fs-18 after-link-blue" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
 	              <?php endif; ?>
 	           </div>
 	         </div>

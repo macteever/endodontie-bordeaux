@@ -39,7 +39,7 @@
                 </div>
                 <div class="soin-hover-thumbnail anim-300">
                   <h2 class="fs-30 fw-700 text-blue"><?php the_title(); ?></h2>
-                  <a class="fs-20 fw-600 text-blue" href="<?php echo esc_url( get_permalink()); ?>">En savoir plus</a>
+                  <a class="fs-20 fw-600 text-blue after-link-blue" href="<?php echo esc_url( get_permalink()); ?>">En savoir plus</a>
                 </div>
               </article>
             </a>

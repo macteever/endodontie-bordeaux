@@ -27,7 +27,7 @@
                        $link_url = $link['url'];
                        $link_title = $link['title'];
                        ?>
-                       <a class="fs-20 fw-600" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
+                       <a class="fs-20 fw-600 after-link-grey" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
                      <?php endif; ?>
                    </div>
                  </div>
@@ -73,12 +73,12 @@
                    $link_url = $link['url'];
                    $link_title = $link['title'];
                    ?>
-                   <a class="fw-700 fs-18" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
+                   <a class="fw-700 fs-18 after-link-grey" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
                  <?php endif; ?>
               </div>
             </div>
           </div>
-          <div class="col-xl-5 col-lg-5 col-md-12 col-12">
+          <div class="col-xl-5 col-lg-5 col-md-12 col-12 apparition-2">
             <?php
             $image = get_sub_field('image');
             if( !empty($image) ): ?>
@@ -127,7 +127,7 @@
                 	$link_title = $link['title'];
                 	$link_target = $link['target'] ? $link['target'] : '_self';
                 	?>
-                	<a class="fs-18 fw-700" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
+                	<a class="fs-18 fw-700 after-link-grey" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
                 <?php endif; ?>
              </div>
            </div>

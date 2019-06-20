@@ -63,7 +63,7 @@
                   $link_url = $link['url'];
                   $link_title = $link['title'];
                   ?>
-                  <a class="fw-700 text-blue fs-18" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
+                  <a class="fw-700 text-blue fs-18 after-link-blue" href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a>
                 <?php endif; ?>
              </div>
            </div>
@@ -76,7 +76,7 @@
              <?php
                $image = get_sub_field('image');
                if( !empty($image) ): ?>
-                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" description="<?php echo $image['description']; ?>"/>
+                 <img class="apparition-2" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" description="<?php echo $image['description']; ?>"/>
                <?php endif;
              ?>
              <?php
