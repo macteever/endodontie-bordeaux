@@ -9,7 +9,7 @@
 					<div class="top-filter mw-60"></div>
 						<div class="container">
 							<div class="row align-items-center mw-100">
-								<div class="col-xl-9 col-lg-9 col-md-9 col-12 d-flex flex-column">
+								<div class="col-xl-9 col-lg-9 col-md-12 col-12 d-flex flex-column">
 									<div class="fs-22">
 										<?php the_sub_field('subtitle'); ?>
 									</div>

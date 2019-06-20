@@ -2,8 +2,8 @@
 <main role="main" class="main-content">
 	<div class="container pt-150">
 		<div class="row justify-content-center">
-			<div class="col-11 text-blue fs-80 fw-600">
-				<?php the_title(); ?>
+			<div class="col-xl-11 col-lg-11 col-md-12 col-12 text-blue fs-80 fw-600">
+				<h1><?php the_title(); ?><h1>
 			</div>
 		</div>
 		<div class="row justify-content-around">

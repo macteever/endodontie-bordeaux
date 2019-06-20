@@ -10,7 +10,7 @@
            <div class="top-filter mw-60"></div>
              <div class="container">
                <div class="row align-items-center mw-100">
-                 <div class="col-xl-9 col-lg-9 col-md-9 col-12 d-flex flex-column">
+                 <div class="col-xl-9 col-lg-9 col-md-12 col-12 d-flex flex-column">
                    <div class="content-subtitle fs-24">
                      <?php the_sub_field('subtitle'); ?>
                    </div>
@@ -47,7 +47,7 @@
        endif;
        ?>
      </section>
-     <section id="home-present" class="container-fluid">
+     <section id="home-present" class="container-fluid p-relative">
        <div class="home-present-filter"></div>
        <div class="container">
        <?php

@@ -31,7 +31,7 @@
 						</div>
 						<div class="row">
 							<div class="col-xl-8 col-lg-8 col-12 fs-17 lh-26 mw-80">
-								<div class="mw-80">
+								<div class="mw-80 single-content">
 									<?php the_field('content'); ?>
 								</div>
 								<div class="col-12 mt-30">
@@ -45,7 +45,7 @@
 									<?php endif; ?>
 								</div>
 							</div>
-							<div class="col-xl-4 col-lg-4 col-12 d-flex flex-column">
+							<div class="col-xl-4 col-lg-4 col-12 d-flex flex-column single-galerie">
 								<?php
 			          if( have_rows('galerie_img') ):
 			            while ( have_rows('galerie_img') ) : the_row();

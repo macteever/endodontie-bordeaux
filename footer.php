@@ -2,7 +2,7 @@
 			<footer class="footer" role="contentinfo">
 				<div class="container-fluid" id="contact">
 					<div class="container">
-						<div class="row justify-content-between align-items-center mt-30 mb-30">
+						<div class="row justify-content-between align-items-center footer-widgets mt-30 mb-30">
 							<div class="col-xl-4 col-lg-4 col-12 fs-13 text-white">
 									<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Widget Area 1', 'html5blank') )?>
 							</div>

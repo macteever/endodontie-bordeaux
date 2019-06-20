@@ -9,7 +9,7 @@
         <div class="endo-filter mw-60"></div>
           <div class="container">
             <div class="row align-items-center mw-100">
-              <div class="col-xl-9 col-lg-9 col-md-9 col-12 d-flex flex-column ml-auto">
+              <div class="col-xl-9 col-lg-9 col-md-12 col-12 d-flex flex-column ml-auto">
                 <div class="content-subtitle fs-22 text-right">
                   <?php the_sub_field('subtitle'); ?>
                 </div>
@@ -114,7 +114,7 @@
            </div>
          </div>
        </div>
-       <div class="col-xl-6 col-lg-6 col-md-12 col-12 p-relative text-center">
+       <div class="col-xl-6 col-lg-6 col-md-12 col-12 p-relative endo-consult-img text-center">
          <?php
          if( have_rows('endo_consult_img') ):
            while ( have_rows('endo_consult_img') ) : the_row();

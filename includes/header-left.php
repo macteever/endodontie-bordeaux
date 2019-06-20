@@ -17,7 +17,7 @@
                <span></span>
                <span></span>
             </button>
-            <span class="ml-10 montserrat text-white">MENU</span>
+            <span class="ml-10 montserrat fs-13 ">MENU</span>
          </div>
       </nav>
         <!-- /nav -->
