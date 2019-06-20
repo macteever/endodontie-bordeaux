@@ -170,11 +170,12 @@ function html5blank_header_scripts()
 // Load HTML5 Blank conditional scripts
 function html5blank_conditional_scripts()
 {
-    // if (is_page_template('templates/template-home-parallax.php')) {
-    //
-    //   wp_register_script( 'jQuery', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js', null, null, true );
-    //   wp_enqueue_script('jQuery');
-    // }
+    if (is_page_template('templates/template-contact.php')) {
+
+      wp_register_script('mapsApi', get_template_directory_uri() . '/assets/js/mapsApi.js', array('jquery'), false, false); // Custom scripts
+      wp_enqueue_script('mapsApi'); // Enqueue it!
+
+    }
 }
 // Load conditional style
 function ct_conditional_styles()

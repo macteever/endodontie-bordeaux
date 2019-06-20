@@ -16,8 +16,8 @@
 						<div class="row">
 							<div class="col-12 text-center text-white fs-12">
 								<a class="text-white fw-600" href="/mentions-legales">Mentions légales ~ </a>
-								<a class="text-white" href="#">Conseil de l'ordre ~ </a>
-								<a class="text-white" href="#">Société Française d'endodontie </a>
+								<a class="text-white" target="_blank" href="http://www.ordre-chirurgiens-dentistes-gironde.fr/">Conseil de l'ordre ~ </a>
+								<a class="text-white" target="_blank" href="https://sfe-endo.fr/">Société Française d'endodontie </a>
 							</div>
 						</div>
 					</div>
